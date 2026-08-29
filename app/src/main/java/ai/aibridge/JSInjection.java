@@ -67,9 +67,14 @@ public final class JSInjection {
       + " if(!box){AIBridge.onError('resp-box-not-found');return;} __observe(box,function(t){AIBridge.onResponse(t);}); }); }); }); })();";
 
     public static String forAi(String ai, String prompt) {
-        JSONObject o = new JSONObject();
-        o.put("p", prompt);               // produces a safely-quoted JSON string
-        String json = o.getString("p");   // the raw quoted literal
+        String json;
+        try {
+            JSONObject o = new JSONObject();
+            o.put("p", prompt);               // produces a safely-quoted JSON string
+            json = o.getString("p");          // the raw quoted literal
+        } catch (org.json.JSONException e) {
+            json = "\"" + prompt.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\"";
+        }
         String tpl;
         switch (ai.toLowerCase()) {
             case "gemini":  tpl = GEMINI;  break;
