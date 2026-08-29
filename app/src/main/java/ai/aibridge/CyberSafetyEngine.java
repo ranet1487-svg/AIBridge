@@ -107,7 +107,7 @@ public final class CyberSafetyEngine {
     }
 
     // ---- clearly illegal / severe-harm content: NEVER forward ----
-    private static final String[] BLOCKED = {
+    private static final String[] BLOCKED_LIST = {
             "make a bomb","build a bomb","pipe bomb","plastic explosive","detonate a","c4 explosive",
             "tnt bomb","how to poison","ricin","anthrax","sarin","nerve agent","bioweapon",
             "biological weapon","make meth","meth recipe","methamphetamine","crystal meth",
@@ -169,7 +169,7 @@ public final class CyberSafetyEngine {
         String p = prompt.toLowerCase(java.util.Locale.US);
 
         // 1. blocked content first (highest priority)
-        boolean blocked = containsAny(p, BLOCKED);
+        boolean blocked = containsAny(p, BLOCKED_LIST);
 
         // 2. categories
         List<String> matched = new ArrayList<>();
