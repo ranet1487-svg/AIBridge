@@ -1,0 +1,28 @@
+# Built artifacts
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.apk
+*.aar
+output.json
+
+# Local signing / secrets
+keystore.properties
+signing.properties
+*.jks
+*.keystore
+
+# OS / editor
+Thumbs.db
+*~
+
+# Stub test dir (used only for offline javac checks on-device)
+.stub/
+.build/

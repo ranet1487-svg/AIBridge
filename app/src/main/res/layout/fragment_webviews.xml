@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/login_hint"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <Button android:id="@+id/btnChatgpt" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="ChatGPT" android:textSize="11sp"/>
+        <Button android:id="@+id/btnGemini" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Gemini" android:textSize="11sp"/>
+        <Button android:id="@+id/btnClaude" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Claude" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/webContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <CheckBox
+            android:id="@+id/chkBg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bg_exec"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnReload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reload" />
+    </LinearLayout>
+</LinearLayout>

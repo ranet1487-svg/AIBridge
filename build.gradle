@@ -1,0 +1,4 @@
+// Top-level build file
+tasks.register("clean") {
+    delete(rootProject.buildDir)
+}
